@@ -4,7 +4,7 @@
       </h2>
     <form>
       <div class="form-group">
-        <label for="formGroupExampleInput">Enter Todo Item</label>
+        <label for="formGroup">Enter Todo Item</label>
         <input [(ngModel)]="itemValue" name="item" type="text" class="form-control" placeholder="Enter Todo...">
       </div>
       <button [disabled]="!itemValue?.length" (click)="createTodo()" type="button" class="btn btn-primary btn-block">Add
