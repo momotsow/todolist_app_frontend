@@ -2,19 +2,18 @@
     <h1>Login</h1>
 </div>
 <div class="card card-body">
-    <form>
+    <form #loginForm=ngForm (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <input type="text" name="username" autocomplete="name" id="nm" placeholder="Enter email" class="form-control">
+          <input type="text" name="email" autocomplete="email" placeholder="Enter email" class="form-control" [(ngModel)]="form.email" required>
         </div>
 
         <div class="form-group">
-          <input type="password" name="password" autocomplete="current-password" placeholder="Password" id="ps" class="form-control">
+          <input type="password" name="password" autocomplete="current-password" placeholder="Password" class="form-control" [(ngModel)]="form.password" required>
         </div>
        
-        <button type="submit" class="btn btn-danger" routerLink="/todo">Login</button>
+        <button type="submit" class="btn btn-danger" routerLink="/todo" [disabled]="!loginForm.valid">Login</button>
         <br>
     
-        <p class="has-text-grey">Do not have an account? <a routerLink="/signup">Sign up</a>now!</p>
       </form>
 
 </div>
